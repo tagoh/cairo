@@ -570,7 +570,7 @@ _cairo_ft_unscaled_font_create_for_pattern (FcPattern *pattern,
     if (ret == FcResultOutOfMemory)
 	return _cairo_error (CAIRO_STATUS_NO_MEMORY);
 
-    ret = FcPatternGetString (pattern, FC_FILE, 0, (FcChar8 **) &filename);
+    ret = FcPatternFindFont (patter, NULL, (FcChar8 **) &filename);
     if (ret == FcResultOutOfMemory)
 	return _cairo_error (CAIRO_STATUS_NO_MEMORY);
     if (ret == FcResultMatch) {
